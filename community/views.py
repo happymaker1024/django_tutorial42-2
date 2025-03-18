@@ -1,7 +1,17 @@
 from django.shortcuts import render
+
+from .models import Article
 from .forms import Form
 
 # Create your views here.
+def articleList(request):
+    # Article클래와 연결된 테이블의 모든 레코드를 조회
+    article_list = Article.objects.all()
+    # print(article_list)
+    # for a in article_list:
+    #     print("이름: ", a.name, "제목: ", a.title)
+    return render(request, 'list.html', {'article_list': article_list})
+
 def write(request):
     # 비즈니스 로직 구현
     hello = "안녕 장고"
