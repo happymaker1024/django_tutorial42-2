@@ -9,8 +9,9 @@
     <h1>글 목록</h1>
     <p>제목 | 작성자 | 작성날짜</p>
     <ul>
+        <!-- 레코드 하나씩 순회 하면서 li 목록을 만듬 -->
         {% for article in article_list %}
-        <li> {{ article.title }} | {{ article.name }} 
+        <li> <a href="/view_detail/{{ article.id }}/">{{ article.title }}</a> | {{ article.name }} 
             | {{ article.cdate|date:"Y년 n월 j일 l"}} </li>
         {% endfor %}
     </ul>

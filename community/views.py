@@ -29,3 +29,9 @@ def write(request):
     # return render(request, 'write.html', {'키':파이썬변수})
     return render(request, 'write.html', 
                   {'hello_django':hello, 'form':form})
+
+
+def viewDetail(request, num=1):
+    article_detail = Article.objects.get(id=num)
+    print("article_detail : ", article_detail)
+    return render(request, 'view_detail.html', {'article_detail':article_detail})
