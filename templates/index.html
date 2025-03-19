@@ -8,7 +8,7 @@
 <body>
     <h1>홈</h1>
     {% for article in latest_article_list %}
-        <li> {{ article.title }} | {{ article.name }}
+        <li> <a href="view_detail/{{ article.id }}">{{ article.title }}</a> | {{ article.name }}
              | {{ article.cdate|date:"Y년 M d일 D"}}</li>
     {% endfor %}
 </body>
