@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 
 from .models import Article
 from .forms import Form
@@ -25,6 +26,7 @@ def write(request):
         if form.is_valid():
             # DB 테이블에 저장
             form.save()
+            return redirect(reverse('community:list'))
     else:
         form = Form()  # Form() 객체 생성
     # return render(request, 'write.html', {'키':파이썬변수})

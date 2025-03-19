@@ -1,6 +1,7 @@
 from django.urls import path
 from community.views import articleList, viewDetail, write
 
+app_name = "community"  # community:list
 urlpatterns = [
     # http://127.0.0.1:8000/write/
     path('write/', write, name='write'), # path
