@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}
+<title>상세내용</title> 
+{% endblock title %}
+{% block contents %}
     <table>
         <tr>
             <td>id</td>
@@ -32,8 +29,7 @@
             <td>{{ article_detail.cdate }}</td>
         </tr>
     </table>
-</body>
-</html>
+{% endblock contents %}
 
 
 

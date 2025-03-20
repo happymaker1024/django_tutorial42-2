@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}
+<title>글 목록</title> 
+{% endblock title %}
+{% block contents %}
+
     <h1>글 목록</h1>
     <p>제목 | 작성자 | 작성날짜</p>
     <ul>
@@ -15,6 +13,5 @@
             | {{ article.cdate|date:"Y년 n월 j일 l"}} </li>
         {% endfor %}
     </ul>
-
-</body>
-</html>
+    <button><a href="/write">글쓰기</a></button>
+{% endblock contents %}

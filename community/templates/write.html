@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>글 작성</title> 
+{% endblock title %}
+{% block contents %}
     <h1>장고는 처음이야</h1>
     <p>{{ hello_django }}</p>
     <form action="" method="post">
         <table>
-            {{ form }}{% csrf_token %}
+            {{ form | crispy }}{% csrf_token %}
         </table>
-        <button type="submit">확인</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">확인</button>
     </form>
-</body>
-</html>
+{% endblock contents %}

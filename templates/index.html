@@ -1,15 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}
+<title>홈</title> 
+{% endblock title %}
+{% block contents %}
     <h1>홈</h1>
-    {% for article in latest_article_list %}
-        <li> <a href="view_detail/{{ article.id }}">{{ article.title }}</a> | {{ article.name }}
-             | {{ article.cdate|date:"Y년 M d일 D"}}</li>
-    {% endfor %}
-</body>
-</html>
+    <div class="row">
+        <div class="col">
+            <!-- 템플릿 태그 주석: 데이터 랜더링 안됨 -->
+            {% comment %}
+            {% for article in latest_article_list %}
+            <li> <a href="view_detail/{{ article.id }}">{{ article.title }}</a> | {{ article.name }}
+                | {{ article.cdate|date:"Y년 M d일 D"}}</li>
+            {% endfor %}
+            {% endcomment %}
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for article in latest_article_list %}
+                  <tr>
+                    <td><a href="view_detail/{{ article.id }}">{{ article.title }}</a></td>
+                    <td>{{ article.name }}</td>
+                    <td>{{ article.cdate|date:"Y년 M d일 D"}}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col">
+            2 of 2
+        </div>
+    </div>
+{% endblock contents %}
+
+
+
+  
+   
+    
+     
+
+    
