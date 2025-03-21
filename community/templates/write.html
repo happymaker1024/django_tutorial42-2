@@ -4,8 +4,7 @@
 <title>글 작성</title> 
 {% endblock title %}
 {% block contents %}
-    <h1>장고는 처음이야</h1>
-    <p>{{ hello_django }}</p>
+    <h1>게시 글을 작성하세요.</h1>
     <form action="" method="post">
         <table>
             {{ form | crispy }}{% csrf_token %}
