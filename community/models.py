@@ -8,3 +8,7 @@ class Article(models.Model):
     url = models.URLField()
     email = models.EmailField()
     cdate = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        # 타이틀, 작성자, 날자
+        pass
